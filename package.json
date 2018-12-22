@@ -1,0 +1,30 @@
+{
+  "name": "srujanallc",
+  "version": "1.0.0",
+  "description": "Homepage for Srujana LLC",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RADesai/SrujanaLLC.git"
+  },
+  "author": "RADesai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RADesai/SrujanaLLC/issues"
+  },
+  "homepage": "https://github.com/RADesai/SrujanaLLC#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "pg": "^7.7.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.42.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
