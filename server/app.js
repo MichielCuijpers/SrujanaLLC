@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const db = require('./config/db');
+const db = require('../config/db');
+const routes = require('../routes/routes');
 
 db.authenticate()
     .then(() => console.log('Connected to database...'))
@@ -10,10 +11,10 @@ db.authenticate()
 
 const app = express();
 
-app.get('/', (req, res) => res.send('INDEX'));
+app.use(express.static('dist'));
 
-app.use('/events', require('./routes/events'));
+const PORT = process.env.PORT || 5000;
 
-const PORT = process.env.PORT || 3000;
+routes(app, express);
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));
