@@ -18,20 +18,22 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 }
+            }, {
+                test: /\.s?css/,
+                use: ["style-loader", "css-loader", "sass-loader"]
             }
         ]
     },
     devServer: {
-        port: 4000,
+        port: 8080,
         open: true,
+        disableHostCheck: true,
         proxy: {
-            "/api": "http://localhost:5000"
+            "/api": "http://localhost:3000"
         }
     },
     plugins: [
         new CleanWebpackPlugin([outputDirectory]),
-        new HtmlWebpackPlugin({
-            template: './src/index.html'
-        })
+        new HtmlWebpackPlugin({template: './src/index.html'})
     ]
 };

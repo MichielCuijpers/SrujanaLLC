@@ -1,0 +1,26 @@
+.logo {
+    width: 72%;
+}
+
+h2,
+h3 {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mail {
+    background-color: #356CA7;
+}
+
+.well {
+    background-color: #02164C;
+    transition: .3s ease-out;
+}
+
+.well:hover {
+    background: transparent;
+}
+
+a {
+    text-decoration: none;
+}

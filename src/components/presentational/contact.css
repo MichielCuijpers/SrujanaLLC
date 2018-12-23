@@ -1,0 +1,101 @@
+.heading {
+    font-family: 'Montserrat', sans-serif;
+    color: #f1f4ff;
+}
+
+address {
+    color: #f1f4ff;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mailLink {
+    transition: .3s ease-out;
+}
+
+.mailLink img {
+    width: 65%;
+}
+
+.mailLink hr {
+    width: 0%;
+}
+
+.mailLink a:hover~hr {
+    width: 60%;
+}
+
+.alert-danger {
+    background-color: transparent;
+    border: 1px solid #ee3017;
+}
+
+label {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffd877;
+    font-size: 1.15em;
+}
+
+input,
+textarea {
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    color: #f1f4ff;
+    background-color: transparent;
+    border-radius: 6px 6px 8px 8px;
+    padding: 5px;
+    border: 1px solid #f1f4ff;
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border: 1px solid #ffd877;
+    box-shadow: 0px 2px 1px 0px #ffd877;
+    outline: none;
+}
+
+.well {
+    background-color: transparent;
+    border: 1px inset #f1f4ff;
+    transition: .3s ease-out;
+}
+
+.well.send:hover {
+    border: 1px inset #63D297;
+    cursor: pointer;
+}
+
+.well.clear:hover {
+    border: 1px inset #EE3017;
+    cursor: pointer;
+}
+
+.glyphicon-send {
+    color: #63D297;
+    transition: .3s ease-out;
+}
+
+.well:hover .glyphicon-send {
+    transform: translateX(3px) translateY(-3px);
+}
+
+.glyphicon-trash {
+    color: #EE3017;
+    transition: .3s ease-out;
+}
+
+.well:hover .glyphicon-trash {
+    transform: translateY(3px);
+}
+
+.mail {
+    font-family: 'Montserrat', sans-serif;
+    color: #f1f4ff;
+}
+
+.well.mail:hover {
+    border-color: #356CA7;
+}
