@@ -10,18 +10,19 @@ import About from '../presentational/About';
 import Events from '../presentational/Events';
 import Team from '../presentational/Team';
 import Contact from '../presentational/Contact';
+import { PAGE_NAME } from '../../Constants';
 
 const getDisplay = (currentPage) => {
     switch(currentPage) {
-        case 'HOME':
+        case PAGE_NAME.HOME:
             return <Home />;
-        case 'ABOUT':
+        case PAGE_NAME.ABOUT:
             return <About />;
-        case 'EVENTS':
+        case PAGE_NAME.EVENTS:
             return <Events />;
-        case 'TEAM':
+        case PAGE_NAME.TEAM:
             return <Team />;
-        case 'CONTACT':
+        case PAGE_NAME.CONTACT:
             return <Contact />;
         default:
             return <Home />;
@@ -56,8 +57,10 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 /* TODO:
-    - Pull/Add Events From/To db
-        - create add event form
-        - load events from db to events.js
-    - Create *bd*
+    - ADD events to db
+        - create api methods/endpoint
+        - create form+link to form
+    - GET events from db to events.js
+        - get events on page load
+        - add loader on events page
 */
