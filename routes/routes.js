@@ -6,7 +6,8 @@ module.exports = function (app, express) {
 
     router
         .route('/events')
-        .get(eventController.getEvents);
+        .get(eventController.getEvents)
+        .post(eventController.addEvent);
 
     app.use('/api', router);
 

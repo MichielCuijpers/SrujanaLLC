@@ -11,6 +11,9 @@ db.authenticate()
 
 const app = express();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
 app.use(express.static('dist'));
 
 const PORT = process.env.PORT || 3000;
