@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './nav.css';
-import { PAGE_NAME } from '../../Constants';
+import { PAGE_NAME } from '../Constants';
 
 export default function Nav({ setPage }) {
     return (

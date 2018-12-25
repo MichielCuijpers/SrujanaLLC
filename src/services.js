@@ -1,0 +1,4 @@
+import axios from 'axios';
+
+// GET all events from db
+export const fetchEvents = () => axios.get('/api/events').then(res => res.data);

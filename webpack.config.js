@@ -1,4 +1,5 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
@@ -31,6 +32,9 @@ module.exports = {
         proxy: {
             "/api": "http://localhost:3000"
         }
+    },
+    optimization: {
+        minimizer: [new TerserPlugin({parallel: true})]
     },
     plugins: [
         new CleanWebpackPlugin([outputDirectory]),

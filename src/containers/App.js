@@ -3,38 +3,46 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import './app.css';
-import actions from '../../actions/actions';
-import Nav from '../presentational/Nav';
-import Home from '../presentational/Home';
-import About from '../presentational/About';
-import Events from '../presentational/Events';
-import Team from '../presentational/Team';
-import Contact from '../presentational/Contact';
-import { PAGE_NAME } from '../../Constants';
+import actions from '../actions/actions';
+import Nav from '../components/Nav';
+import Home from '../components/Home';
+import About from '../components/About';
+import Events from '../components/Events';
+import Team from '../components/Team';
+import Contact from '../components/Contact';
+import EventCreator from '../components/EventCreator';
+import { PAGE_NAME } from '../Constants';
 
-const getDisplay = (currentPage) => {
+const getDisplay = ({ currentPage, eventDate, events, actions }) => {
     switch(currentPage) {
         case PAGE_NAME.HOME:
             return <Home />;
         case PAGE_NAME.ABOUT:
             return <About />;
         case PAGE_NAME.EVENTS:
-            return <Events />;
+            return <Events eventList={ events }/>;
         case PAGE_NAME.TEAM:
             return <Team />;
         case PAGE_NAME.CONTACT:
             return <Contact />;
+        case PAGE_NAME.EVENT_CREATOR:
+            return <EventCreator eventDate={ eventDate } selectDate={ actions.selectDate } />;
         default:
             return <Home />;
     }
 };
 
 class App extends Component {
+    componentDidMount() {
+        console.log('**get events**');
+        this.props.actions.fetchEvents();
+    }
+
     render() {
         return (
             <div className="App">
                 <Nav setPage={ this.props.actions.setPage }/>
-                { getDisplay(this.props.currentPage) }
+                { getDisplay(this.props) }
             </div>
         );
     }
@@ -42,12 +50,17 @@ class App extends Component {
 
 App.PropTypes = {
     setPage: PropTypes.func,
+    fetchEvents: PropTypes.func,
+    selectDate: PropTypes.func,
+    eventDate: PropTypes.date,
+    events: PropTypes.array,
     currentPage: PropTypes.string
 };
 
 const mapStateToProps = (state) => {
     const {currentPage} = state.navigationReducer;
-    return {currentPage};
+    const {eventDate, events} = state.eventReducer;
+    return { currentPage, eventDate, events };
 };
 
 function mapDispatchToProps(dispatch) {
@@ -58,9 +71,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 /* TODO:
     - ADD events to db
-        - create api methods/endpoint
-        - create form+link to form
+        - form submit -> /POST event
+        - create link to form
     - GET events from db to events.js
-        - get events on page load
         - add loader on events page
 */

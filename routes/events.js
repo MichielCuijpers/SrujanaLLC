@@ -5,7 +5,6 @@ module.exports = {
         Event
             .findAll()
             .then(events => {
-                console.log('Fetched Events:', events);
                 res.status(200).send(events);
             })
             .catch(() => res.sendStatus(500));
