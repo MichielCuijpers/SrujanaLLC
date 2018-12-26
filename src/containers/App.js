@@ -10,7 +10,7 @@ import About from '../components/About';
 import Events from '../components/Events';
 import Team from '../components/Team';
 import Contact from '../components/Contact';
-import EventCreator from '../components/EventCreator';
+import Admin from '../components/Admin';
 import { PAGE_NAME } from '../Constants';
 
 const getDisplay = ({ currentPage, eventDate, events, actions }) => {
@@ -20,13 +20,17 @@ const getDisplay = ({ currentPage, eventDate, events, actions }) => {
         case PAGE_NAME.ABOUT:
             return <About />;
         case PAGE_NAME.EVENTS:
-            return <Events eventList={ events }/>;
+            return <Events eventList={ events } />;
         case PAGE_NAME.TEAM:
             return <Team />;
         case PAGE_NAME.CONTACT:
             return <Contact />;
-        case PAGE_NAME.EVENT_CREATOR:
-            return <EventCreator eventDate={ eventDate } selectDate={ actions.selectDate } />;
+        case PAGE_NAME.ADMIN:
+            return <Admin
+                eventDate={ eventDate }
+                selectDate={ actions.selectDate }
+                createEvent={ actions.createEvent }
+                eventList = { events } />;
         default:
             return <Home />;
     }
@@ -34,7 +38,6 @@ const getDisplay = ({ currentPage, eventDate, events, actions }) => {
 
 class App extends Component {
     componentDidMount() {
-        console.log('**get events**');
         this.props.actions.fetchEvents();
     }
 
@@ -51,6 +54,7 @@ class App extends Component {
 App.PropTypes = {
     setPage: PropTypes.func,
     fetchEvents: PropTypes.func,
+    createEvent: PropTypes.func,
     selectDate: PropTypes.func,
     eventDate: PropTypes.date,
     events: PropTypes.array,
@@ -71,7 +75,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 /* TODO:
     - ADD events to db
-        - form submit -> /POST event
         - create link to form
     - GET events from db to events.js
         - add loader on events page

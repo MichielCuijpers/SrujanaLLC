@@ -10,14 +10,12 @@ module.exports = {
             .catch(() => res.sendStatus(500));
     },
     addEvent: (req, res) => {
-        // const { title, logo, date } = req.body;
-        const { title, logo } = req && req.body;
-        const date = new Date();
+        const { title, logo, eventDate } = req.body;
         Event
             .create({
                 title,
                 logo,
-                date
+                date: eventDate
             })
             .then(res.sendStatus(200))
             .catch(error => console.log(error));

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Field, reduxForm} from 'redux-form';
 import DatePicker from "react-datepicker";
 import './eventCreator.css';
@@ -24,17 +25,15 @@ const datePicker = (eventDate, selectDate) => {
     );
 };
 
-const submitEvent = (values) => {
+const submitEvent = (createEvent, values) => {
     event.preventDefault();
-    console.log('||.||.||.||.||.||.||');
-    console.log('submitting form values...', values);
-    console.log('||.||.||.||.||.||.||');
+    createEvent(values);
 }
 
 const EventCreator = (props) => {
-    const { handleSubmit, eventDate, selectDate } = props;
+    const { handleSubmit, eventDate, selectDate, createEvent } = props;
     return (
-        <form className="create-event-form" onSubmit={ handleSubmit((values) => submitEvent({ ...values, eventDate })) }>
+        <form className="create-event-form" onSubmit={ handleSubmit((values) => submitEvent(createEvent, { ...values, eventDate })) }>
             <div>
                 <label htmlFor="title">Title</label>
                 <Field name="title" component="input" type="text"/>
@@ -50,6 +49,12 @@ const EventCreator = (props) => {
             <button type="submit">Create Event</button>
         </form>
     )
-}
+};
+
+EventCreator.PropTypes = {
+    createEvent: PropTypes.func,
+    selectDate: PropTypes.func,
+    eventDate: PropTypes.date
+};
 
 export default reduxForm({form: 'event-creator'})(EventCreator);

@@ -1,4 +1,5 @@
 export const FETCH_EVENTS = 'FETCH_EVENTS';
+export const CREATE_EVENT = 'CREATE_EVENT';
 export const SET_PAGE = 'SET_PAGE';
 export const SELECT_DATE = 'SELECT_DATE';
 
@@ -7,37 +8,41 @@ export const PAGE_NAME = {
     ABOUT: 'ABOUT',
     TEAM: 'TEAM',
     EVENTS: 'EVENTS',
-    EVENT_CREATOR: 'EVENT_CREATOR',
-    CONTACT: 'CONTACT'
+    CONTACT: 'CONTACT',
+    ADMIN: 'ADMIN'
 };
 
 export const originalEvents = [
     {
-        name: 'Bhairav Se Bhairavi Tak',
+        title: 'Colors of Rajasthan',
+        date: '03 NOV 2018',
+        logo: 'https://image.ibb.co/fRMUv0/COR-with-supporters.jpg'
+    }, {
+        title: 'Bhairav Se Bhairavi Tak',
         date: '22 JUN 2018',
         logo: 'https://image.ibb.co/fPdUtJ/0.jpg'
     }, {
-        name: 'Yugpurush',
+        title: 'Yugpurush',
         date: '06 AUG 2017',
         logo: 'https://image.ibb.co/cfejnF/yugpurush_Logo.jpg'
     }, {
-        name: 'Sangam',
+        title: 'Sangam',
         date: '25 MAY 2017',
         logo: 'https://image.ibb.co/kAbUt5/Sangam_postcard_5_x_7_1.jpg'
     }, {
-        name: 'Sogaat',
+        title: 'Sogaat',
         date: '22 NOV 2015',
         logo: 'https://image.ibb.co/nzCxd5/Screen_Shot_2017_04_26_at_10_14_47_PM.png'
     }, {
-        name: 'Shabda Sangat',
+        title: 'Shabda Sangat',
         date: '30 NOV 2014',
         logo: 'https://image.ibb.co/mEnGo5/Shabda_Sangat.gif'
     }, {
-        name: 'Sur Safar',
+        title: 'Sur Safar',
         date: '16 AUG 2014',
         logo: 'https://image.ibb.co/bFmWMQ/Sur_Safar.png'
     }, {
-        name: 'Ashok Dave',
+        title: 'Ashok Dave',
         date: '26 APR 2014',
         logo: 'https://image.ibb.co/dLzAy5/Screen_Shot_2017_04_26_at_10_14_08_PM.png'
     }

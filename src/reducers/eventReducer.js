@@ -6,12 +6,24 @@ const initialState = {
     eventDate: new Date()
 };
 
-export default function createEventReducer(state = initialState, action) {
+export default function eventReducer(state = initialState, action) {
     switch (action.type) {
         case `${FETCH_EVENTS}_FULFILLED`:
             return {
                 ...state,
+                fetching: false,
                 events: action.payload
+            }
+            case `${FETCH_EVENTS}_REJECTED`:
+            return {
+                ...state,
+                fetching: false,
+                events: originalEvents
+            }
+        case `${FETCH_EVENTS}_PENDING`:
+            return {
+                ...state,
+                fetching: true
             }
         case SELECT_DATE:
             return {
