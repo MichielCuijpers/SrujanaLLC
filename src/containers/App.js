@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import './app.css';
 import actions from '../actions/actions';
 import Nav from '../components/Nav';
 import Home from '../components/Home';
@@ -74,8 +73,9 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 /* TODO:
-    - ADD events to db
-        - create link to form
-    - GET events from db to events.js
-        - add loader on events page
+    - create link to form (/Admin)
+    - Add event date && time
+    - add loader on events page
+    - style: Srujana & TV Asia Present
+    - style: Scss GLOBALS
 */

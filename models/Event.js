@@ -5,6 +5,9 @@ const Event = db.define('event', {
     title: {
         type: Sequelize.STRING
     },
+    description: {
+        type: Sequelize.TEXT
+    },
     logo: {
         type: Sequelize.STRING
     },
@@ -12,5 +15,7 @@ const Event = db.define('event', {
         type: Sequelize.DATE
     }
 });
+
+// TODO: add description -> text (4/5 lines) ?
 
 module.exports = Event;

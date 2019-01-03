@@ -1,5 +1,28 @@
 body {
+    background-color: #02164C;
+    color: #f1f4ff;
+    font-size: 1.6rem;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+hr {
+    transition: .3s ease-out;
+}
+
+.orange {
+    border-color: #F10766;
+}
+
+.yellow {
+    border-color: #ffd877;
+}
+
+.blue {
+    border-color: #02164C;
 }

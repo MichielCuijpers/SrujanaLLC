@@ -39,6 +39,10 @@ const EventCreator = (props) => {
                 <Field name="title" component="input" type="text"/>
             </div>
             <div>
+                <label htmlFor="description">Description</label>
+                <Field name="description" component="input" type="text"/>
+            </div>
+            <div>
                 <label htmlFor="logo">Logo URL</label>
                 <Field name="logo" component="input" type="text"/>
             </div>

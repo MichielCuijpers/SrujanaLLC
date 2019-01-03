@@ -16,34 +16,42 @@ export const originalEvents = [
     {
         title: 'Colors of Rajasthan',
         date: '03 NOV 2018',
+        description: 'Please don\'t miss this opportunity to witness one of a kind show - Colors of Rajasthan. Every artist is pouring their best to create a memorable and memorizing event on Noember 03, 2018. Please book your tickets at your earliest. Thank you for your cooperation. 🙏',
         logo: 'https://image.ibb.co/fRMUv0/COR-with-supporters.jpg'
     }, {
         title: 'Bhairav Se Bhairavi Tak',
         date: '22 JUN 2018',
+        description: '',
         logo: 'https://image.ibb.co/fPdUtJ/0.jpg'
     }, {
         title: 'Yugpurush',
         date: '06 AUG 2017',
+        description: '',
         logo: 'https://image.ibb.co/cfejnF/yugpurush_Logo.jpg'
     }, {
         title: 'Sangam',
         date: '25 MAY 2017',
+        description: '',
         logo: 'https://image.ibb.co/kAbUt5/Sangam_postcard_5_x_7_1.jpg'
     }, {
         title: 'Sogaat',
         date: '22 NOV 2015',
+        description: '',
         logo: 'https://image.ibb.co/nzCxd5/Screen_Shot_2017_04_26_at_10_14_47_PM.png'
     }, {
         title: 'Shabda Sangat',
         date: '30 NOV 2014',
+        description: '',
         logo: 'https://image.ibb.co/mEnGo5/Shabda_Sangat.gif'
     }, {
         title: 'Sur Safar',
         date: '16 AUG 2014',
+        description: '',
         logo: 'https://image.ibb.co/bFmWMQ/Sur_Safar.png'
     }, {
         title: 'Ashok Dave',
         date: '26 APR 2014',
+        description: '',
         logo: 'https://image.ibb.co/dLzAy5/Screen_Shot_2017_04_26_at_10_14_08_PM.png'
     }
 ];

@@ -19,7 +19,7 @@ a:focus {
 .nav {
     padding: 5px;
     padding-top: 10px;
-    font-size: 1.4em;
+    font-size: 1.6rem;
     border: transparent;
     background: transparent;
     transition: .3s ease-out;

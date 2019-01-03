@@ -12,6 +12,5 @@ module.exports = new Sequelize('srujana', CREDENTIALS.DB_USER, CREDENTIALS.DB_PA
     idle: 10000
   },
 
-  // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
   operatorsAliases: false
 });
