@@ -12,14 +12,27 @@ module.exports = {
     addEvent: (req, res) => {
         const { title, logo, eventDate, description } = req.body;
         const eventDescription = description || '';
+        if (title) {
+            Event
+                .create({
+                    title,
+                    logo,
+                    date: eventDate,
+                    description: eventDescription
+                })
+                .then(res.sendStatus(200))
+                .catch(error => console.log(error));
+        }
+        res.status(400).send('INVALID TITLE');
+    },
+    deleteEvent: (req, res) => {
+        console.log('--- --- --- ---');
+        console.log('delete REQ, params:', req.params);
         Event
-            .create({
-                title,
-                logo,
-                date: eventDate,
-                description: eventDescription
+            .destroy({
+                where: { id: req.params.id }
             })
-            .then(res.sendStatus(200))
+            .then(res.sendStatus(204))
             .catch(error => console.log(error));
     }
 };

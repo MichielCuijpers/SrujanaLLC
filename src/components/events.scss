@@ -1,31 +1,4 @@
+.page-header,
 .heading {
     font-family: 'Montserrat', sans-serif;
-}
-
-.event-card {
-    margin-bottom: 50px;
-    box-shadow: 0 0 1px 1px #000;
-    .event-description {
-        padding: 15px 10px;
-        min-height: 65px;
-        background-color: rgba(241, 7, 101, 0.147);
-        .name {
-            font-family: 'Timmana', sans-serif;
-            font-size: 3rem;
-        }
-        .date,
-        .description {
-            font-family: 'Montserrat', sans-serif;
-            display: block;
-        }
-        .description {
-            margin-top: 10px;
-            text-align: justify;
-            text-justify: inter-word;
-        }
-    }
-}
-
-.poster {
-    width: 100%;
 }

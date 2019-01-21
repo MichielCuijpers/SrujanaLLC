@@ -1,7 +1,7 @@
 import { PAGE_NAME, SET_PAGE } from '../Constants';
 
 const initialState = {
-    currentPage: PAGE_NAME.ADMIN
+    currentPage: PAGE_NAME.HOME
 };
 
 export default function navigationReducer(state = initialState, action) {

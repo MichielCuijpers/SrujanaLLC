@@ -9,6 +9,10 @@ module.exports = function (app, express) {
         .get(eventController.getEvents)
         .post(eventController.addEvent);
 
+    router
+        .route('/events/:id')
+        .delete(eventController.deleteEvent);
+
     app.use('/api', router);
 
     app.get('/*', (req, res) => {

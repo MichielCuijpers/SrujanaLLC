@@ -9,7 +9,8 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.join(__dirname, outputDirectory),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     module: {
         rules: [
@@ -22,6 +23,11 @@ module.exports = {
             }, {
                 test: /\.s?css/,
                 use: ["style-loader", "css-loader", "sass-loader"]
+            }, {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
+                ]
             }
         ]
     },

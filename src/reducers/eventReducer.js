@@ -1,4 +1,4 @@
-import { SELECT_DATE, FETCH_EVENTS } from '../Constants';
+import { SELECT_DATE, FETCH_EVENTS, CREATE_EVENT } from '../Constants';
 import { originalEvents } from '../Constants';
 
 const initialState = {
@@ -24,6 +24,17 @@ export default function eventReducer(state = initialState, action) {
             return {
                 ...state,
                 fetching: true
+            }
+        case `${CREATE_EVENT}_PENDING`:
+            return {
+                ...state,
+                loading: true
+            }
+        case `${CREATE_EVENT}_REJECTED`:
+        case `${CREATE_EVENT}_FULFILLED`:
+            return {
+                ...state,
+                loading: false
             }
         case SELECT_DATE:
             return {

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Field, reduxForm} from 'redux-form';
 import DatePicker from "react-datepicker";
-import './eventCreator.css';
+import './eventCreator.scss';
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -13,6 +13,8 @@ const datePicker = (eventDate, selectDate) => {
             showWeekNumbers
             showMonthDropdown
             showYearDropdown
+            // TODO: showTimeSelect
+            // TODO: timeIntervals={15}
             scrollableMonthDropdown
             scrollableYearDropdown
             withPortal
@@ -30,8 +32,17 @@ const submitEvent = (createEvent, values) => {
     createEvent(values);
 }
 
+// const getSubmitButton = (loading) => (
+//         <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+// );
+const getSubmitButton = (loading) => (
+    loading ?
+        <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        : 'Create Event'
+);
+
 const EventCreator = (props) => {
-    const { handleSubmit, eventDate, selectDate, createEvent } = props;
+    const { handleSubmit, eventDate, selectDate, createEvent, loading } = props;
     return (
         <form className="create-event-form" onSubmit={ handleSubmit((values) => submitEvent(createEvent, { ...values, eventDate })) }>
             <div>
@@ -50,7 +61,7 @@ const EventCreator = (props) => {
                 <label htmlFor="eventDate">Date</label>
                 <Field name='eventDate' component={ () => datePicker(eventDate, selectDate) } />
             </div>
-            <button type="submit">Create Event</button>
+            <button type="submit">{ getSubmitButton(loading) }</button>
         </form>
     )
 };
@@ -58,6 +69,7 @@ const EventCreator = (props) => {
 EventCreator.PropTypes = {
     createEvent: PropTypes.func,
     selectDate: PropTypes.func,
+    loading: PropTypes.bool,
     eventDate: PropTypes.date
 };
 

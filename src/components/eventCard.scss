@@ -1,0 +1,36 @@
+.event-card {
+    margin-bottom: 50px;
+    box-shadow: 0 0 15px 5px #010F33;
+    .event-description {
+        min-height: 65px;
+        .banner {
+            background-image: url("https://image.ibb.co/b9zFFk/sargana_logo_ENG_1.png");
+            background-repeat: no-repeat;
+            background-position-x: 48%;
+            background-position-y: 84%;
+            .name,
+            .date {
+                color: #f1f4ff;
+                font-family: 'Architects Daughter', sans-serif;
+                text-shadow: 2px 2px #000;
+            }
+            .name {
+                font-size: 3.5rem;
+            }
+            .date {
+                font-size: 2.5rem;
+            }
+        }
+        .description {
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 10px;
+            padding: 10px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+    }
+    .poster {
+        width: 100%;
+        padding: 5px;
+    }
+}
