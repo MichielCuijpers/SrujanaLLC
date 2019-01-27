@@ -2,12 +2,14 @@ import {createStore, applyMiddleware} from 'redux';
 import {createLogger} from 'redux-logger';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
+import { eventMiddleware } from './middleware/eventMiddleware';
 import rootReducer from './reducers/rootReducer';
 
 const createStoreWithMiddleware = applyMiddleware(
     promise(),
     thunk,
-    createLogger())(createStore);
+    createLogger(),
+    eventMiddleware)(createStore);
 
 const store = createStoreWithMiddleware(
     rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());

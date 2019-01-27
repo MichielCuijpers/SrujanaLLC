@@ -1,5 +1,5 @@
 import React from 'react';
-import './team.css';
+import '../assets/styles/team.css';
 
 const getTeamMember = (name, phoneNumber) => (
     <div className="member">

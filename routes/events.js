@@ -26,8 +26,6 @@ module.exports = {
         res.status(400).send('INVALID TITLE');
     },
     deleteEvent: (req, res) => {
-        console.log('--- --- --- ---');
-        console.log('delete REQ, params:', req.params);
         Event
             .destroy({
                 where: { id: req.params.id }

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import EventCreator from './EventCreator';
 import EventCard from './EventCard';
-import './admin.scss';
+import '../assets/styles/admin.scss';
 
 const listEvents = (events, deleteEvent) => {
     return (

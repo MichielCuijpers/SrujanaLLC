@@ -40,7 +40,6 @@ const getDisplay = ({ currentPage, eventDate, events, loading, actions }) => {
 
 class App extends Component {
     componentDidMount() {
-        console.log('doc.loc.hash:', document.location.hash);
         if (document.location.hash === `#/ADMIN_${CREDENTIALS.ADMIN_PASS}`) {
             this.props.actions.setPage(PAGE_NAME.ADMIN);
         }

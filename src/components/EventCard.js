@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SrujanaLogo from '../assets/srujana-logo.png'
-import './eventCard.scss'
+import SrujanaLogo from '../assets/images/srujana-logo.png'
+import '../assets/styles/eventCard.scss'
 
 const getDescription = (description) => (
     <div className="description">{ description }</div>

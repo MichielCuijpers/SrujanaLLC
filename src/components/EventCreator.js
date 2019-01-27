@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Field, reduxForm} from 'redux-form';
 import DatePicker from "react-datepicker";
-import './eventCreator.scss';
+import '../assets/styles/eventCreator.scss';
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -32,9 +32,6 @@ const submitEvent = (createEvent, values) => {
     createEvent(values);
 }
 
-// const getSubmitButton = (loading) => (
-//         <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-// );
 const getSubmitButton = (loading) => (
     loading ?
         <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>

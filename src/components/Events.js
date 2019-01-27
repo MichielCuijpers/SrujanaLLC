@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import EventCard from './EventCard';
-import './events.scss';
+import '../assets/styles/events.scss';
 import { getUpcomingEvents, getPreviousEvents } from '../Helpers';
 
 const getEvents = (events, header) => (
