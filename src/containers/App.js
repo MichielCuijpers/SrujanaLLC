@@ -81,8 +81,7 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 /* TODO:
-    - add event refresh on add+delete
-    - delete event refresh+confirm
+    - delete event confirm
     - Add event time
     - add loader on events page
     - style: Scss GLOBALS

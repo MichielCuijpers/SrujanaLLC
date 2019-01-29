@@ -1,3 +1,5 @@
+@import '_Globals';
+
 .logo {
     width: 72%;
 }
@@ -13,7 +15,7 @@ h3 {
 }
 
 .well {
-    background-color: #02164C;
+    background-color: $blue;
     transition: .3s ease-out;
 }
 

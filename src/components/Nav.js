@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../assets/styles/nav.css';
+import '../assets/styles/nav.scss';
 import { PAGE_NAME } from '../Constants';
 import SrujanaLogo from '../assets/images/srujana-logo.png'
 

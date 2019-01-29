@@ -1,5 +1,7 @@
+@import '_Globals';
+
 body {
-    background-color: #02164C;
+    background-color: $blue;
     color: #f1f4ff;
     font-size: 1.6rem;
     margin: 0;
@@ -16,13 +18,13 @@ hr {
 }
 
 .orange {
-    border-color: #F10766;
+    border-color: $orange;
 }
 
 .yellow {
-    border-color: #ffd877;
+    border-color: $yellow;
 }
 
 .blue {
-    border-color: #02164C;
+    border-color: $blue;
 }
