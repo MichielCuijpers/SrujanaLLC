@@ -20,7 +20,7 @@ export const originalEvents = [
         id: 0,
         title: 'Colors of Rajasthan',
         date: '03 NOV 2018',
-        description: 'Please don\'t miss this opportunity to witness one of a kind show - Colors of Rajasthan. Every artist is pouring their best to create a memorable and memorizing event on Noember 03, 2018. Please book your tickets at your earliest. Thank you for your cooperation. 🙏',
+        description: 'Please don\'t miss this opportunity to witness one of a kind show - Colors of Rajasthan. Every artist is pouring their best to create a memorable and mesmerizing event on November 03, 2018. Please book your tickets at your earliest. Thank you for your cooperation. 🙏',
         logo: 'https://image.ibb.co/fRMUv0/COR-with-supporters.jpg'
     }, {
         id: 1,
