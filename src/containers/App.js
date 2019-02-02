@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import actions from '../actions/actions';
-import CREDENTIALS from '../../creds';
 import Nav from '../components/Nav';
 import Home from '../components/Home';
 import About from '../components/About';
@@ -83,7 +82,6 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 /* TODO:
-    - make service call to validate admin
     - delete event confirm
     - Add event time
     - add loader on events page

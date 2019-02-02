@@ -4,7 +4,8 @@
   "description": "Homepage for Srujana LLC",
   "main": "app.js",
   "engines": {
-    "node": "10.3.0"
+    "node": "10.3.0",
+    "npm": "6.5.0"
   },
   "scripts": {
     "client": "webpack-dev-server --mode development --hot",
