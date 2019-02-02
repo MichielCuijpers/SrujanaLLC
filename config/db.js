@@ -1,5 +1,4 @@
 const Sequelize = require('sequelize');
-const CREDENTIALS = require('../creds');
 
 const POSTGRES = 'postgres';
 
@@ -8,7 +7,7 @@ const sequelize = process.env.DATABASE_URL ?
     dialect: POSTGRES,
     protocol: POSTGRES
   })
-  : new Sequelize('srujana', CREDENTIALS.DB_USER, CREDENTIALS.DB_PASSWORD, {
+  : new Sequelize('srujana', process.env.DB_USER, process.env.DB_PASSWORD, {
     host: 'localhost',
     dialect: POSTGRES,
     pool: {
