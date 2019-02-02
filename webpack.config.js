@@ -12,6 +12,9 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/'
     },
+    node: {
+        fs: "empty"
+    },
     module: {
         rules: [
             {
@@ -25,9 +28,7 @@ module.exports = {
                 use: ["style-loader", "css-loader", "sass-loader"]
             }, {
                 test: /\.(png|svg|jpg|gif)$/,
-                use: [
-                    'file-loader'
-                ]
+                use: ['file-loader']
             }
         ]
     },

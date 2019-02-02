@@ -1,5 +1,6 @@
 const path = require('path');
 const eventController = require('./events');
+const authController = require('./auth');
 
 module.exports = function (app, express) {
     const router = express.Router();
@@ -12,6 +13,10 @@ module.exports = function (app, express) {
     router
         .route('/events/:id')
         .delete(eventController.deleteEvent);
+
+    router
+        .route('/auth')
+        .post(authController.validateAdmin);
 
     app.use('/api', router);
 

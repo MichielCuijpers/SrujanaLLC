@@ -3,6 +3,7 @@ export const DELETE_EVENT = 'DELETE_EVENT';
 export const CREATE_EVENT = 'CREATE_EVENT';
 export const SET_PAGE = 'SET_PAGE';
 export const SELECT_DATE = 'SELECT_DATE';
+export const VALIDATE_ADMIN = 'VALIDATE_ADMIN';
 
 export const PAGE_NAME = {
     HOME: 'HOME',
@@ -66,3 +67,5 @@ export const originalEvents = [
         logo: 'https://image.ibb.co/dLzAy5/Screen_Shot_2017_04_26_at_10_14_08_PM.png'
     }
 ];
+
+export const ADMIN = '#/ADMIN_';

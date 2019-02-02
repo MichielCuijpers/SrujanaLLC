@@ -11,7 +11,7 @@ import Events from '../components/Events';
 import Team from '../components/Team';
 import Contact from '../components/Contact';
 import Admin from '../components/Admin';
-import { PAGE_NAME } from '../Constants';
+import { PAGE_NAME, ADMIN } from '../Constants';
 
 const getDisplay = ({ currentPage, eventDate, events, loading, actions }) => {
     switch(currentPage) {
@@ -40,8 +40,9 @@ const getDisplay = ({ currentPage, eventDate, events, loading, actions }) => {
 
 class App extends Component {
     componentDidMount() {
-        if (document.location.hash === `#/ADMIN_${CREDENTIALS.ADMIN_PASS}`) {
-            this.props.actions.setPage(PAGE_NAME.ADMIN);
+        const locationHash = document.location.hash;
+        if (locationHash.includes(ADMIN)) {
+            this.props.actions.validateAdmin(locationHash.replace(ADMIN, ''));
         }
         this.props.actions.fetchEvents();
     }
@@ -62,6 +63,7 @@ App.PropTypes = {
     createEvent: PropTypes.func,
     selectDate: PropTypes.func,
     deleteEvent: PropTypes.func,
+    validateAdmin: PropTypes.func,
     eventDate: PropTypes.date,
     events: PropTypes.array,
     loading: PropTypes.bool,
@@ -81,8 +83,8 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 /* TODO:
+    - make service call to validate admin
     - delete event confirm
     - Add event time
     - add loader on events page
-    - style: Scss GLOBALS
 */

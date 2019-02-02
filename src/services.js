@@ -6,3 +6,5 @@ export const fetchEvents = () => axios.get('/api/events').then(res => res.data);
 export const createEvent = (event) => axios.post('/api/events', event).then(res => res.data);
 
 export const deleteEvent = (eventId) => axios.delete(`/api/events/${eventId}`).then(res => res.data);
+
+export const validateAdmin = (password) => axios.post(`/api/auth`, password).then(res => res.data);

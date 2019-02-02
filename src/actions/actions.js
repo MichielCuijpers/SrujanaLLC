@@ -1,4 +1,4 @@
-import { FETCH_EVENTS, CREATE_EVENT, SET_PAGE, SELECT_DATE, DELETE_EVENT } from '../Constants';
+import { FETCH_EVENTS, CREATE_EVENT, SET_PAGE, SELECT_DATE, DELETE_EVENT, VALIDATE_ADMIN } from '../Constants';
 import * as service from '../services';
 
 const actions = {
@@ -22,6 +22,10 @@ const actions = {
         type: SELECT_DATE,
         payload: date
     }),
+    validateAdmin: (password) => ({
+        type: VALIDATE_ADMIN,
+        payload: service.validateAdmin({ password })
+    })
 };
 
 export default actions;
