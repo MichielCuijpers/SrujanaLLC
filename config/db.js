@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 
 const POSTGRES = 'postgres';
 
-module.exports = new Sequelize(process.env.DATABASE_URL,{
+module.exports = new Sequelize(process.env.DATABASE_URL, {
   dialect: POSTGRES,
   protocol: POSTGRES,
   pool: {
